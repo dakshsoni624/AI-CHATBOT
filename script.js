@@ -9,7 +9,7 @@ const imageInput = document.querySelector("#image input");
 // ===== Gemini API Endpoint =====
 // ⚠️ For production, NEVER expose your API key in frontend code!
 // Use a backend proxy or environment variable instead.
-const Api_Url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY";
+const Api_Url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAOaAwgWo7bGCPxzLmfJBX4bBoPaLcVPo4";
 
 // ===== User Object =====
 let user = {
@@ -145,4 +145,5 @@ imageInput.addEventListener("change", () => {
 imageBtn.addEventListener("click", () => {
   imageBtn.querySelector("input").click();
 });
+
 
