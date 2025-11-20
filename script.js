@@ -5,7 +5,8 @@ let imagebtn=document.querySelector("#image")
 let image=document.querySelector("#image img")
 let imageinput=document.querySelector("#image input")
 
-const Api_Url="https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA6e2od7mpxSeK3Kb199t4xs8_XbIoaTYA"
+const Api_Url="https://generativelanguage.googleapis.com/v1beta/models/\
+gemini-3-pro-preview:generateContent"
 
 let user={
     message:null,
@@ -20,7 +21,8 @@ async function generateResponse(aiChatBox) {
 let text=aiChatBox.querySelector(".ai-chat-area")
     let RequestOption={
         method:"POST",
-        headers:{'Content-Type' : 'application/json'},
+        headers:"x-goog-api-key:AIzaSyA6e2od7mpxSeK3Kb199t4xs8_XbIoaTYA"
+{'Content-Type' : 'application/json'},
         body:JSON.stringify({
             "contents":[
                 {"parts":[{text:user.message},(user.file.data?[{inline_data:user.file}]:[])
