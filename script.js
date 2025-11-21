@@ -23,9 +23,10 @@ let text=aiChatBox.querySelector(".ai-chat-area")
         headers: {'Content-Type' :'application/json'},
         body:JSON.stringify({
             "contents":[
-                {"parts":[{text:user.message},(user.file.data?[{inline_data:user.file}]:[])
-
-                ]
+                {"parts": [
+    { text: user.message },
+    ...(user.file.data ? [{ inline_data: user.file }] : [])
+]
             }]
         })
     }
@@ -100,9 +101,8 @@ imageinput.addEventListener("change",()=>{
     let reader=new FileReader()
     reader.onload=(e)=>{
        let base64string=e.target.result.split(",")[1]
-       user.file={
-        mime_type:file.type,
-        data: base64string
+       user.file = { mime_type: null, data: null
+data: base64string };
     }
     image.src=`data:${user.file.mime_type};base64,${user.file.data}`
     image.classList.add("choose")
