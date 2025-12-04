@@ -1,4 +1,4 @@
-// --- keep your DOM queries as-is ---
+
 let prompt = document.querySelector("#prompt")
 let submitbtn = document.querySelector("#submit")
 let chatContainer = document.querySelector(".chat-container")
@@ -6,8 +6,7 @@ let imagebtn = document.querySelector("#image")
 let image = document.querySelector("#image img")
 let imageinput = document.querySelector("#image input")
 
-// IMPORTANT: Do NOT keep your API key in client code for production.
-// For quick local testing you can keep it, but consider server proxying.
+
 const Api_Url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCXw9-uONicBrXUQRvQimKJKrKPsUh93XU"
 
 
@@ -152,5 +151,6 @@ imageinput.addEventListener("change", () => {
 imagebtn.addEventListener("click", () => {
   imagebtn.querySelector("input").click()
 })
+
 
 
